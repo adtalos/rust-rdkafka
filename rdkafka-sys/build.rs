@@ -248,7 +248,7 @@ fn build_librdkafka() {
 
     println!("Configuring and compiling librdkafka");
     let dst = config.build();
-
+    println!("cargo:rustc-link-lib=curl");
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
     println!("cargo:rustc-link-lib=static=rdkafka");
 }
